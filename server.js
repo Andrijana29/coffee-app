@@ -32,19 +32,19 @@ app.use(
   })
 );
 
-app.get('/', (req, res) => {
-  res.render('index.ejs', {
-    user: req.session.user,
-  });
-});
+// app.get('/', (req, res) => {
+//   res.render('index.ejs', {
+//     user: req.session.user,
+//   });
+// });
 
-app.get('/vip-lounge', (req, res) => {
-  if (req.session.user) {
-    res.send(`Welcome to the party ${req.session.user.username}.`);
-  } else {
-    res.send('Sorry, no guests allowed.');
-  }
-});
+// app.get('/vip-lounge', (req, res) => {
+//   if (req.session.user) {
+//     res.send(`Welcome to the party ${req.session.user.username}.`);
+//   } else {
+//     res.send('Sorry, no guests allowed.');
+//   }
+// });
 
 app.use(passUserToView);
 
@@ -52,4 +52,4 @@ app.use('/auth', authController);
 app.use(isSignedIn);
 app.use('/users/:userId/coffees', coffeesController);
 app.listen(port, () => {
-  console.log(`The express app is ready on port ${port}!`);
+  console.log(`The express app is ready on port ${port}!`)})

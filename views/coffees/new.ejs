@@ -10,10 +10,76 @@
     <h1>Add a New Coffee</h1>
     <form action="/users/<%= user._id %>/coffees" method="POST">
         <div>    
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="name" />
+            <label for="sort">Sort:</label>
+            <input type="text" name="sort" id="sort" />
         </div>
-            <button type="submit">Add Coffee</button>
+
+        <div>    
+          <label for="variety">Variety:</label>
+          <input type="text" name="variety" id="variety" />
+        </div>
+        
+        <div>    
+          <label for="aroma">Aroma:</label>
+          <input type="text" name="aroma" id="aroma" />
+        </div>
+        
+        <div>    
+          <label for="grainPicking">Grain picking:</label>
+          <input type="text" name="grainPicking" id="grainPicking" />
+        </div>
+
+        <div>    
+          <label for="grainProcessing">Grain processing:</label>
+          <input type="text" name="grainProcessing" id="grainProcessing" />
+        </div>
+
+        <div>    
+          <label for="roastingScale">Roasting scale:</label>
+          <input type="text" name="roastingScale" id="roastingScale" />
+        </div>
+
+        <div>    
+          <label for="roastingLevels">Roasting levels:</label>
+          <input type="text" name="roastingLevels" id="roastingLevels" />
+        </div>
+
+        <div>    
+          <label for="grindingMethods">Grinding methods:</label>
+          <input type="text" name="grindingMethods" id="grindingMethods" />
+        </div>
+
+        <div>    
+          <label for="preparationMethods">Preparation methods:</label>
+          <input type="text" name="preparationMethods" id="preparationMethods" />
+        </div>
+
+        <div>    
+          <label for="coffeeAppliances">Coffee appliances:</label>
+          <input type="text" name="coffeeAppliances" id="coffeeAppliances" />
+        </div>
+
+        <div>    
+          <label for="origin">Origin:</label>
+          <input type="text" name="origin" id="origin" />
+        </div>
+
+        <div>    
+          <label for="countries">Countries:</label>
+          <input type="text" name="countries" id="countries" />
+        </div>
+
+        <div>    
+          <label for="coffeeBeverages">Coffee beverages:</label>
+          <input type="text" name="coffeeBeverages" id="coffeeBeverages" />
+        </div>
+
+        <div>    
+          <label for="coffeeCultures">Coffee cultures:</label>
+          <input type="text" name="coffeeCultures" id="coffeeCultures" />
+        </div>
+
+            <button type="submit">Add a coffee</button>
           </form>
   </body>
 </html>

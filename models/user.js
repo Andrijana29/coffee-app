@@ -1,54 +1,6 @@
 const mongoose = require('mongoose');
-const preparationAndMachines = new mongoose.schema({
-    preparationMethods: {
-        type: String,
-    required: true,
-    },
-    espressoMachinesByMechanism: {
-        type: String,
-    required: true,
-    },
-    espressoMachinesByAutomatizationLevel: {
-        type: String,
-    required: true,
-    },
-})
-const CoffeeAlternativeNamesByRoastingLevels = new mongoose.Schema({
-  lightRoast: {
-    type: String,
-    required: true,
-  },
-  mediumRoast {
-    type: String,
-    required: true,
-  },
-  mediumDarkRoast {
-    type: String,
-    required: true,
-  },
-  darkRoast {
-    type: String,
-    required: true,
-  },
-});
-const cultivationAndProcessingPhases = new mongoose.Schema({  
-  picking: {
-    type: String,
-    required: true,
-  },
-  grainProcessing: {
-    type: String,
-  },
-  roastingScale: {
-    type: ObjectId,
-    ref: "Profile",
-  },
-  grindingMethods: {
-    type: [ObjectId],
-    ref: "Ingredient",
-  },
-});
-const coffeeSchema = new mongoose.Schema({
+
+const coffeeSchema = mongoose.Schema({
   sort: {
     type: String,
     required: true,
@@ -61,15 +13,31 @@ const coffeeSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  coffeeRoad: {
+  grainPicking: {
     type: String,
     required: true,
   },
-  cultivationAndProcessingPhases: {
+  grainProcessing: {
     type: String,
     required: true,
   },
-  preparationAndMachines: {
+  roastingScale: {
+    type: String,
+    required: true,
+  },
+  roastingLevels: {
+    type: String,
+    required: true,
+  },
+  grindingMethods: {
+    type: String,
+    required: true,
+  },
+  preparationMethods: {
+    type: String,
+    required: true,
+  },
+  coffeeAppliances: {
     type: String,
     required: true,
   },
@@ -81,7 +49,7 @@ const coffeeSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  beverages: {
+  coffeeBeverages: {
     type: String,
     required: true,
   },

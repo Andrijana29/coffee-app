@@ -32,11 +32,13 @@ app.use(
   })
 );
 
-// app.get('/', (req, res) => {
-//   res.render('index.ejs', {
-//     user: req.session.user,
-//   });
-// });
+app.use(passUserToView);
+
+app.get('/', (req, res) => {
+ res.render('index.ejs', {
+    user: req.session.user,
+});
+});
 
 // app.get('/vip-lounge', (req, res) => {
 //   if (req.session.user) {
@@ -46,10 +48,11 @@ app.use(
 //   }
 // });
 
-app.use(passUserToView);
+
 
 app.use('/auth', authController);
 app.use(isSignedIn);
 app.use('/users/:userId/coffees', coffeesController);
+
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`)})

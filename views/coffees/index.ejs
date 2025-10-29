@@ -6,8 +6,14 @@
     <title>My Coffees</title>
   </head>
   <body>
-    <%- include('./partials/_navbar.ejs') %>
+    <%- include('../partials/_navbar.ejs') %>
     <h1>Welcome to Coffee World</h1>
-    <a href="/users/<%=user._id%>/coffees/new">Add an App</a>
+    <a href="/users/<%=user._id%>/coffees/new">Add a coffee</a>
+
+    <ul>
+      <% coffees.forEach((coffee)=> { %>
+          <li> <a href="/users/<%= user._id %>/coffees/<%= coffee._id %>"> <%= coffee.sort %>  </a> </li>
+     <% }) %>
+  </ul>
   </body>
 </html>

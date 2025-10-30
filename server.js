@@ -21,7 +21,7 @@ mongoose.connection.on('connected', () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
 
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 // app.use(morgan('dev'));
 app.use(
@@ -48,8 +48,16 @@ app.get('/', (req, res) => {
 //   }
 // });
 
-
-
+app.put("/coffees/:coffeeId", async (req, res) => {
+  // Handle the 'isReadyToEat' checkbox data
+  if (req.body.isReadyToEat === "on") {
+    req.body.isReadyToEat = true;
+  }
+// Update the fruit in the database
+  await Coffee.findByIdAndUpdate(req.params.coffeeId, req.body);
+// Redirect to the fruit's show page to see the updates
+  res.redirect(`/coffees/${req.params.coffeeId}`);
+});
 app.use('/auth', authController);
 app.use(isSignedIn);
 app.use('/users/:userId/coffees', coffeesController);

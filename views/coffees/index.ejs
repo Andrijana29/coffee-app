@@ -12,7 +12,7 @@
 
     <ul>
       <% coffees.forEach((coffee)=> { %>
-          <li> <a href="/users/<%= user._id %>/coffees/<%= coffee._id %>"> <%= coffee.sort %>  </a> </li>
+          <li> <a href="/users/<%= user._id %>/coffees/<%= coffee._id %>"> <%= coffee.name %>  </a> </li>
      <% }) %>
   </ul>
   </body>

@@ -10,6 +10,10 @@
     <h1>Add a New Coffee</h1>
     <form action="/users/<%= user._id %>/coffees" method="POST">
         <div>    
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" />
+        </div>
+        <div>    
             <label for="sort">Sort:</label>
             <input type="text" name="sort" id="sort" />
         </div>

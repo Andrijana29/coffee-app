@@ -44,9 +44,8 @@ router.post('/', async (req, res) => {
   try {
       
       const currentUser = await User.findById(req.session.user._id)
-     
-
-      currentUser.coffees.push(req.body)
+     const newCoffee = currentUser.coffees.create(req.body)
+      currentUser.coffees.push(newCoffee)
       
       await currentUser.save();
   // Redirect back to the applications index view

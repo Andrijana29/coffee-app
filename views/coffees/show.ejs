@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= coffees.name %></title>
+  </head>
+  <body>
+    <div class="coffee-details">
+        <!-- show page content -->
+      </div>
+    
+    <a href="/coffees/">Back to Coffees</a>
+    <h1><%= coffees.name %></h1>
+    <!-- Conditional rendering based on fruit's readiness -->
+    
+     <!-- new delete button -->
+    <div class="coffee-actions">
+        <form
+          class="delete-form"
+          action="/coffees/<%=coffees._id%>?_method=DELETE"
+          method="POST"
+        >
+    <button class="delete-button" type="submit">Delete <%= coffees.name %></button>
+    
+    <a href="/coffees/<%= coffees._id %>/edit">Edit <%= coffees.name %></a>
+    <a class="edit-link" href="/coffees/<%= coffees._id %>/edit">
+        
+      </a>
+  </form>
+  </body>
+</html>

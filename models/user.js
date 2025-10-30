@@ -1,41 +1,45 @@
 const mongoose = require('mongoose');
 
-const coffeeSchema = mongoose.Schema({
+const coffeeSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    //required: true,
+  },
   sort: {
     type: String,
-    required: true,
+    // required: true,
   },
   variety: {
     type: String,
-    required: true,
+    // required: true,
   },
   grainProcessing: {
     type: String,
-    required: true,
+    // required: true,
   },
   roastingLevels: {
     type: String,
-    required: true,
+    // required: true,
   },
   grindingMethods: {
     type: String,
-    required: true,
+    // required: true,
   },
   preparationMethods: {
     type: String,
-    required: true,
+    // required: true,
   },
   coffeeAppliances: {
     type: String,
-    required: true,
+    // required: true,
   },
   origin: {
     type: String,
-    required: true,
+    // required: true,
   },
   coffeeBeverages: {
     type: String,
-    required: true,
+    // required: true,
   },
 });
 const userSchema = new mongoose.Schema({

@@ -13,10 +13,12 @@ router.get('/', async (req, res) => {
   }
 });
 
+
 router.get('/new', async (req, res)=> {
   try {
-
+      console.log('add new coffee')
       const currentUser = await User.findById(req.session.user._id);
+      console.log('here',currentUser)
       res.render("coffees/new.ejs", {
         user: currentUser
       });
@@ -26,12 +28,24 @@ router.get('/new', async (req, res)=> {
   }
 })
 
+router.get('/:coffeeId', async (req, res) => {
+   try {
+      console.log('show coffee route')
+      const currentUser = await User.findById(req.session.user._id)
+      const foundCoffee = currentUser.coffees.id(req.params.coffeeId)
+      res.render("coffees/show.ejs", {coffees: foundCoffee})
+  } catch (error){
+      console.log(error)
+      res.redirect("/")
+  }
+})
+
 router.post('/', async (req, res) => {
   try {
       
       const currentUser = await User.findById(req.session.user._id)
-      
-      
+     
+
       currentUser.coffees.push(req.body)
       
       await currentUser.save();

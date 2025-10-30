@@ -9,19 +9,7 @@ const coffeeSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  aroma: {
-    type: String,
-    required: true,
-  },
-  grainPicking: {
-    type: String,
-    required: true,
-  },
   grainProcessing: {
-    type: String,
-    required: true,
-  },
-  roastingScale: {
     type: String,
     required: true,
   },
@@ -41,19 +29,11 @@ const coffeeSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  mix: {
-    type: String,
-    required: true,
-  },
-  countries: {
+  origin: {
     type: String,
     required: true,
   },
   coffeeBeverages: {
-    type: String,
-    required: true,
-  },
-  coffeeCultures: {
     type: String,
     required: true,
   },

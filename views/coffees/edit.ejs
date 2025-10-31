@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Coffee</title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Edit Coffee</h1>
+    <form action="/users/<%= user._id %>/coffees/<%= coffee._id %>?_method=PUT" method="POST">
+        <div>    
+            <label for="name">Name:</label>
+            <input type="text" name="name" value="<%= coffee.name %>" />
+        </div>
+        <div>    
+            <label for="sort">Sort:</label>
+            <input type="text" name="sort" value="<%= coffee.sort %>" />
+        </div>
+
+        <div>    
+          <label for="variety">Variety:</label>
+          <input type="text" name="variety" value="<%= coffee.variety %>" />
+        </div>
+ 
+      
+        <div>    
+          <label for="grainProcessing">Grain processing:</label>
+          <input type="text" name="grainProcessing" value="<%= coffee.grainProcessing %>" />
+        </div>
+
+        <div>    
+          <label for="roastingLevels">Roasting levels:</label>
+          <input type="text" name="roastingLevels" value="<%= coffee.roastingLevels %>" />
+        </div>
+
+        <div>    
+          <label for="grindingMethods">Grinding methods:</label>
+          <input type="text" name="grindingMethods" value="<%= coffee.grindingMethods %>" />
+        </div>
+
+        <div>    
+          <label for="preparationMethods">Preparation methods:</label>
+          <input type="text" name="preparationMethods" value="<%= coffee.preparationMethods %>" />
+        </div>
+
+        <div>    
+          <label for="coffeeAppliances">Coffee appliances:</label>
+          <input type="text" name="coffeeAppliances" value="<%= coffee.coffeeAppliances %>" />
+        </div>
+
+        <div>    
+          <label for="origin">Origin:</label>
+          <input type="text" name="origin" value="<%= coffee.origin %>" />
+        </div>
+
+        <div>    
+          <label for="coffeeBeverages">Coffee beverages:</label>
+          <input type="text" name="coffeeBeverages" value="<%= coffee.coffeeBeverages %>" />
+        </div> 
+
+            <button type="submit">Save Changes</button>
+          </form>
+  </body>
+</html>

@@ -18,15 +18,15 @@
     <div class="coffee-actions">
         <form
           class="delete-form"
-          action="/coffees/<%=coffees._id%>?_method=DELETE"
+          action="/users/<%= user._id %>/coffees/<%=coffees._id%>?_method=DELETE"
           method="POST"
         >
     <button class="delete-button" type="submit">Delete <%= coffees.name %></button>
+        </form>
     
-    <a href="/coffees/<%= coffees._id %>/edit">Edit <%= coffees.name %></a>
+    <a href="/users/<%= user._id %>/coffees/edit/<%= coffees._id %>">Edit <%= coffees.name %></a>
     <a class="edit-link" href="/coffees/<%= coffees._id %>/edit">
         
       </a>
-  </form>
   </body>
 </html>
